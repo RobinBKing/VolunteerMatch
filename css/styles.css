@@ -1,5 +1,37 @@
-#google-map {
-  width: 500px;
-  height: 400px;
-  background-color: blue;
+.img-responsive {
+  width: 70%;
+  margin: auto;
+}
+#carousel-example-generic {
+  background-color: black;
+}
+.navi {
+    line-height:30px;
+
+    height:9000px;
+    width:250px;
+    float:left;
+    padding:50px;
+    font-weight: bold;
+}
+#animals {
+  margin-bottom: 225px;
+  font-size: 500%;
+  text-shadow: 2px 2px black;
+}
+
+#kitchen {
+  margin-bottom: 150px;
+  font-size: 500%;
+  text-shadow: 2px 2px black;
+}
+
+#environment {
+  margin-bottom: 380px;
+  font-size: 500%;
+  text-shadow: 2px 2px black;
+}
+
+.page-header {
+  text-align: center;
 }
