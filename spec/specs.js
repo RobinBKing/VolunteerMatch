@@ -15,3 +15,9 @@ describe('Organization', function() {
      expect(testOrgization.fullAddress()).to.equal("123 main st., Portland, Oregon 97123");
    });
 });
+describe('OrganizationGroup', function() {
+  it("creates an array of Organizations by given properties", function() {
+    var testOrganizationGroup = new OrganizationGroup();
+    expect(testOrganizationGroup.organizations).to.eql([]);
+  });
+});

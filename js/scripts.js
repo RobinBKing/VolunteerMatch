@@ -12,6 +12,9 @@ function Organization(organizationName, organizationDescription, street, city, s
 Organization.prototype.fullAddress = function() {
   return this.street + ", " + this.city + ", " + this.state + " " + this.zip;
   };
+function OrganizationGroup(){
+  this.organizations = [];
+}
 //interface
 // $(document).ready(function() {
 // });
