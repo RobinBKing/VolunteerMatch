@@ -1,18 +1,10 @@
-.img-responsive {
-  width: 70%;
-  margin: auto;
-}
-#carousel-example-generic {
-  background-color: black;
-}
 .navi {
-    line-height:30px;
-
-    height:9000px;
-    width:250px;
-    float:left;
-    padding:50px;
-    font-weight: bold;
+  line-height:30px;
+  height:9000px;
+  width:250px;
+  float:left;
+  padding:50px;
+  font-weight: bold;
 }
 #animals {
   margin-bottom: 225px;
@@ -34,4 +26,8 @@
 
 .page-header {
   text-align: center;
+}
+.item {
+  align-items: center;
+  max-width: none;
 }
