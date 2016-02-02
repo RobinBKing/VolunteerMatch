@@ -6,6 +6,7 @@
   padding: 50px;
   font-weight: bold;
 }
+
 #animals {
   margin-bottom: 5px;
   font-size: 500%;
@@ -27,10 +28,12 @@
 .page-header {
   text-align: center;
 }
+
 .item {
   align-items: center;
   max-width: none;
 }
+
 .carousel img {
   top: 0;
   left: 0;
@@ -80,13 +83,13 @@ MEDIA QUERIES
 }
 
 @media only screen and (max-width: 790px) {
-  #animals, #kitchen, #environment {
+  #animals, #kids, #environment {
     font-size: 200%;
   }
 }
 
 @media only screen and (max-width: 540px) {
-  #kitchen {
+  #kids {
     margin-bottom: 10px;
   }
   #environment {
