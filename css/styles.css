@@ -1,12 +1,3 @@
-.sidebar {
-  line-height: 30px;
-  height: 9000px;
-  width: 250px;
-  float: left;
-  padding: 50px;
-  font-weight: bold;
-}
-
 #animals {
   margin-bottom: 5px;
   font-size: 500%;
@@ -40,6 +31,11 @@
   min-width: 100%;
   height: 500px;
 }
+ .form {
+   text-align: center;
+   margin-left: 20px;
+   width: 300px;
+ }
 
 /*-----------
 MEDIA QUERIES
