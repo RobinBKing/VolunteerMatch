@@ -15,11 +15,6 @@
   font-size: 500%;
   text-shadow: 2px 2px black;
 }
-
-.page-header {
-  text-align: center;
-}
-
 .item {
   align-items: center;
   max-width: none;
@@ -34,9 +29,36 @@
  .form {
    text-align: center;
    margin-left: 20px;
-   width: 300px;
+   /*width: 300px;*/
  }
-
+ .dropdown {
+   text-align: center;
+ }
+ .form-control  {
+   margin-bottom: 40px;
+ }
+ .btn {
+   margin-bottom: 40px;
+ }
+#distance {
+   margin-bottom: -40px;
+ }
+ .page-header {
+   text-align: center;
+   background-color: #66c2ff;
+   height: 100px;
+   margin-top: 0px;
+ }
+ #second-header {
+   background-color: #66c2ff;
+   margin-top: 0px;
+   font-weight: bolder;
+   height: 100px;
+}
+.home-link {
+  float: left;
+  padding-left: 20px;
+}
 /*-----------
 MEDIA QUERIES
 ------------*/
