@@ -25,13 +25,14 @@ $(document).ready(function() {
   var distance = 15;
   var keyword = "hunger homelessness OR Health & Wellness";
   // var keyword = "hunger homelessness";
-  $.getJSON("http://api2.allforgood.org/api/volopps?key=epicodus&type=all&merge=3&output=json-hoc&vol_loc=" + location + "&vol_dist=" + distance + "&vol_startdate=NOW&q=" + keyword + " ", function(opportunities) {
-    // if (json != "Nothing found."){
-    if (opportunities.TotalOpportunities > 0) {
+  $.getJSON("http://api2.allforgood.org/api/volopps?key=epicodus&type=all&merge=3&output=json-hoc&vol_loc=" + location + "&vol_dist=" + distance + "&vol_startdate=NOW&q=" + keyword + " ", function(jsonOpportunities) {
+    // if (jsonOpportunities != "Nothing found."){
+    if (jsonOpportunities.num > 0) {
+        var newOpportunities = new Opportunities(jsonOpportunities.TotalOpportunities);
       // console.log(opportunities);
-      for (var i = 0; i < array.length; i++) {
-        array[i]
-      }
+      for (var i = 0; i < jsonOpportunities.items.length; i++) {
+        newOpportunities.items.push(jsonOpportunities.items[i]);
+      };
     }
     else {
       alert("No results found. Try changing your search criteria.")
