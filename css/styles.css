@@ -158,6 +158,7 @@ MEDIA QUERIES
   #kids {
     margin-bottom: 10px;
   }
+}
   #environment {
     margin-bottom: 150px;
   }
@@ -180,6 +181,7 @@ MEDIA QUERIES
     margin-bottom: 0px;
   }
 }
+
 @media only screen and (max-width: 480px) {
   .search input {
     width: 85%;
@@ -189,6 +191,7 @@ MEDIA QUERIES
     margin-left: 15px;
   }
 }
+
 /*Media querie for bottom header on the main page*/
 /*Media querie for 1040px*/
 @media only screen and (max-width: 1040px) {
@@ -207,10 +210,11 @@ MEDIA QUERIES
 /*media querie for header in index. "volunteer connection. get involved"*/
 @media only screen and (max-width: 500px) {
   #header-title {
+
     font-size: 20px;
   }
 }
-/*End of media querie*/
+/*End of Media querie*/
 
 /*------------
 SEARCH BOX CSS
