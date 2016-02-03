@@ -1,7 +1,7 @@
 describe('Opportunities', function () {
   it("creates a new object Opportunities with given properties", function() {
-    var testOpportunities = new Opportunities(10);
-    expect(testOpportunities.totalOpportunities).to.equal(10);
+    var testOpportunities = new Opportunities(1, "Portland, OR", 15, "NOW", "2016-07-29", "hunger homelessness OR Health & Wellness");
+    expect(testOpportunities.totalOpportunities).to.equal(0);
     expect(testOpportunities.items).to.eql([]);
   });
 });
