@@ -55,92 +55,21 @@
     <div>
       <h3>Type in a search keyword below or click on one of the categories to display helpful keywords</h3>
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <form class="form">
-          <div class="form-group">
-            <label for="exampleInputName1">Search</label>
-            <input type="text" class="form-control" placeholder="Search keyword">
-            <label for="exampleInputName3">Zip code or City, State</label>
-            <input type="text" class="form-control" placeholder="Zip code or City, State">
-            <label for="exampleInputName4">Distance</label>
-            <input type="number" class="form-control" id="distance" placeholder="Distance in miles">
-          </div>
-          <br></br>
-          <button type="submit" class="btn btn-primary">Primary</button>
-        </form>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            People:
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="http://safeshelterpdx.org/volunteer/">Salvation Army Female Emergency Shelter</a></li>
-            <li><a href="http://www.portlandoregon.gov/police/index.cfm?c=35911/">Self-Defense Instructor</a></li>
-            <li><a href="http://worldoregon.org/about/careers-volunteer">International Visitor</a></li>
-            <li><a href="#">Food Pantry Assistant</a></li>
-            <li><a href="#">Meals on Wheels</a></li>
-            <li><a href="#">Walk to End Alzheimer's</a></li>
-            <li><a href="#">Team Member SMART</a></li>
-            <li><a href="#">Oregon Jewish Museum</a></li>
-            <li><a href="#">Transition Projects</a></li>
-            <li><a href="#">Nook and Cranny Patrol</a></li>
-            <li><a href="#">Pet Assistance for Homeless</a></li>
-            <li><a href="#">Events Outreach: Oregon Walks</a></li>
-            <li><a href="#">Women's Shelter Facilities</a></li>
-            <li><a href="#">Assistant at Children's Theatre</a></li>
-            <li><a href="#">Program Night volunteer for Homeless Children</a></li>
-            <li><a href="#">Pantry Volunteer</a></li>
-            <li><a href="#">American Red Cross Driver</a></li>
-            <li><a href="#">Girl Scouts</a></li>
-            <li><a href="#">Childrens' Clean Water Festival</a></li>
-            <li><a href="#">Store to Door</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+    <section class="main">
+      <form class="search" method="post" action="index.html">
+        <input type="text" name="q" placeholder="Search keyword" />
+          <ul class="results">
+           <li><a href="index.html">Elderly<br /><span>Help the elderly</span></a></li>
+           <li><a href="index.html">Homeless<br /><span>Help the homeless</span></a></li>
+           <li><a href="index.html">Kids<br /><span>Help kids</span></a></li>
+           <li><a href="index.html">Autism<br /><span>Help people affected by autism</span></a></li>
           </ul>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Animals:
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Pet Assistance for Homeless</a></li>
-            <li><a href="#">Wolf Education Presenter</a></li>
-            <li><a href="#">Kitty Caregiver</a></li>
-            <li><a href="#">Pacific Pug Rescue</a></li>
-            <li><a href="#">Oregon Humane Society</a></li>
-            <li><a href="#">Feral Cat Ambassador</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Environment:
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Sustainable Climate Environment Advocate</a></li>
-            <li><a href="#">Watershed Wide Event</a></li>
-            <li><a href="#">Lumber Salvage and Happy Hour</a></li>
-            <li><a href="#">Green Streets NorthEast</a></li>
-            <li><a href="#">Sustainable Climate Enviornment Advocate</a></li>
-            <li><a href="#">Events and Outreach internship</a></li>
-            <li><a href="#">OMSI science internship</a></li>
-            <li><a href="#">Trail Work in Arboretum</a></li>
-            <li><a href="#">Portland Fruit Tree Project</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+          <input type="text" placeholder="Zip or City, State" />
+          <button type="submit" class="btn btn-primary">Search</button>
+       </form>
+     </section>
+
   </body>
 </html>
+<!-- <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-3"> -->
