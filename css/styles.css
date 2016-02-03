@@ -62,6 +62,8 @@ form {
 /*Control padding of Volunteer Connection tittle*/
 #header-title {
   padding-top: 30px;
+  font-family: Tahoma serif;
+  text-shadow: black 1px;
 }
 /*Bottom header: It says "Type in a search keyboard below or click"*/
 #bottom-header {
@@ -71,6 +73,7 @@ form {
   background-color: #66c2ff;
   text-align: center;
   padding-top: 10px;
+  font-family: Georgia serif;
 }
 /*-----------
 MEDIA QUERIES
@@ -185,6 +188,6 @@ MEDIA QUERIES
 /*media querie for header in index. "volunteer connection. get involved"*/
 @media only screen and (max-width: 500px) {
   #header-title {
-    font-size: 90%;
+    font-size: 20px;
   }
 }
