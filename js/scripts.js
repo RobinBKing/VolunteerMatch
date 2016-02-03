@@ -16,6 +16,10 @@ function Opportunities(recordsReturn, location, distance, startDate, endDate, ke
   this.jsonString = "http://api2.allforgood.org/api/volopps?start=" + this.startRecord + "&num=" + this.recordsReturn + "&key=epicodus&type=all&merge=3&output=json-hoc&vol_loc=" + location + "&vol_dist=" + this.distance +  "&vol_startdate=" + this.startDate +  this.endDate + "&output=json-hoc&sort=" + this.sort + "&q=" + this.keyword + " ";
 };
 var jsonOportunities = function(newOpportunities) {
+  $.ajaxSetup({
+  async: false
+  });
+
   $.getJSON(newOpportunities.jsonString, function(jsonOpportunities) {
     if (jsonOpportunities.num > 0) {
     //  var newOpportunities = new Opportunities(jsonOpportunities.TotalOpportunities);
@@ -23,8 +27,7 @@ var jsonOportunities = function(newOpportunities) {
        newOpportunities.items.push(jsonOpportunities.items[i]);
      };
      newOpportunities.totalOpportunities = jsonOpportunities.TotalOpportunities;
-     console.log(jsonOpportunities);
-    //  console.log(newOpportunities.items.length);
+    //  console.log(jsonOpportunities);
     }
     else
     {
@@ -62,8 +65,6 @@ $(document).ready(function() {
     var keyword = "hunger homelessness OR Health & Wellness";
 
     var newOpportunities = new Opportunities(recordsReturn, location, distance, startDate, endDate, keyword);
-    // jsonOportunities(newOpportunities);
-
-    console.log(jsonOportunities(newOpportunities));
+    jsonOportunities(newOpportunities);
    });
 });
