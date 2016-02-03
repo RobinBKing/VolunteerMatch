@@ -53,9 +53,9 @@ function OrganizationGroup(){
 }
 
 //dropdown text function
-$("li").click(function() {
-  alert("this is a list.");
-});
+// $("li").click(function() {
+//   alert("this is a list.");
+// });
 
 //interface
 $(document).ready(function() {
