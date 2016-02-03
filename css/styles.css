@@ -29,37 +29,48 @@
 form {
    margin-left: 20px;
 }
-h3 {
-  background-color: #66c2ff;
 
-}
  .dropdown {
    text-align: center;
  }
+
  .form-control  {
    margin-bottom: 40px;
  }
+
  .btn {
    margin-bottom: 40px;
  }
+
 #distance {
    margin-bottom: -40px;
  }
+ /*Controls the header on the first page. Does not control the tittle*/
  .page-header {
    text-align: center;
    background-color: #66c2ff;
    height: 100px;
-   margin-top: 0px;
+   margin-top: -40px;
+   margin-bottom: -20px;
  }
- #second-header {
-   background-color: #66c2ff;
-   margin-top: 0px;
-   font-weight: bolder;
-   height: 100px;
-}
+ /*Control home link on second page*/
 .home-link {
   float: left;
-  padding-left: 20px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+/*Control padding of Volunteer Connection tittle*/
+#header-title {
+  padding-top: 30px;
+}
+/*Bottom header: It says "Type in a search keyboard below or click"*/
+#bottom-header {
+  height: 50px;
+  margin-top: -20px;
+  text-indent: center;
+  background-color: #66c2ff;
+  text-align: center;
+  padding-top: 10px;
 }
 /*-----------
 MEDIA QUERIES
@@ -154,5 +165,26 @@ MEDIA QUERIES
 @media only screen and (max-width: 340px) {
   #environment {
     margin-bottom: 0px;
+  }
+}
+/*Media querie for bottom header on the main page*/
+/*Media querie for 1040px*/
+@media only screen and (max-width: 1040px) {
+  #bottom-header {
+    margin-bottom: 0px;
+    font-size: 98%;
+  }
+}
+/*media querie for 325px*/
+@media only screen and (max-width: 325px) {
+  #bottom-header {
+    margin-bottom: 0px;
+    font-size: 9px;
+  }
+}
+/*media querie for header in index. "volunteer connection. get involved"*/
+@media only screen and (max-width: 500px) {
+  #header-title {
+    font-size: 90%;
   }
 }
