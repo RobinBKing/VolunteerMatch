@@ -1,3 +1,10 @@
+describe('Opportunities', function () {
+  it("creates a new object Opportunities with given properties", function() {
+    var testOpportunities = new Opportunities(10);
+    expect(testOpportunities.totalOpportunities).to.equal(10);
+    expect(testOpportunities.items).to.eql([]);
+  });
+});
 describe('Organization', function() {
   it("creates a new orgainzation with given properties", function() {
      var testOrgization = new Organization("Portland Rescue Mission", "A place for homless people", "123 main st.", "Portland", "Oregon", "97123", "503-313-1234", "http://www.PortlandRescueMission.org");

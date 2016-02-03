@@ -1,0 +1,26 @@
+Opportunity.
+  TotalOpportunities
+  num
+  items.Object.
+    Distance
+    categoryTags[]
+    city
+    description
+    detailUrl
+    startDate
+    endDate
+    eventName
+    latlong
+    location_name
+    minAge
+    maximumAge
+    postalCode
+    pubDate
+    region (state)
+    skills
+    sponsoringOrganizationName
+    sponsoringOrganizationUrl
+    volunteerHubOrganizationName
+    volunteerHubOrganizationUrl
+    title
+    virtual

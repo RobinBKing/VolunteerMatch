@@ -1,4 +1,8 @@
 //business logic
+function Opportunities(totalOpportunities){
+  this.totalOpportunities = totalOpportunities;
+  this.items = [];
+};
 function Organization(organizationName, organizationDescription, street, city, state, zip, phone, website){
   this.organizationName =  organizationName;
   this.organizationDescription = organizationDescription;
@@ -19,11 +23,16 @@ function OrganizationGroup(){
 $(document).ready(function() {
   var location = "Portland, OR"
   var distance = 15;
-  var keyword = "homelessness"
-  $.getJSON("http://api2.allforgood.org/api/volopps?key=epicodus&type=all&merge=3&output=json-hoc&vol_loc=" + location + "&vol_dist=" + distance + "&vol_startdate=NOW&q=(" + keyword + ")", function(json) {
-    if (json != "Nothing found."){
-      console.log(json);
-      alert(json.items[0].location_name);
+  var keyword = "hunger homelessness OR Health & Wellness";
+  // var keyword = "hunger homelessness";
+  $.getJSON("http://api2.allforgood.org/api/volopps?key=epicodus&type=all&merge=3&output=json-hoc&vol_loc=" + location + "&vol_dist=" + distance + "&vol_startdate=NOW&q=" + keyword + " ", function(jsonOpportunities) {
+    // if (jsonOpportunities != "Nothing found."){
+    if (jsonOpportunities.num > 0) {
+        var newOpportunities = new Opportunities(jsonOpportunities.TotalOpportunities);
+      // console.log(opportunities);
+      for (var i = 0; i < jsonOpportunities.items.length; i++) {
+        newOpportunities.items.push(jsonOpportunities.items[i]);
+      };
     }
     else {
       alert("No results found. Try changing your search criteria.")
