@@ -68,11 +68,7 @@ h3 {
  }
 
  .form-control  {
-   margin-bottom: 40px;
- }
-
- .btn {
-   margin-bottom: 40px;
+   margin-bottom: -10px;
  }
 
 #distance {
@@ -118,7 +114,7 @@ h3 {
 }
 
 .form-control {
-  width: 50%;
+  width: 60%;
 }
 
 /*-----------
