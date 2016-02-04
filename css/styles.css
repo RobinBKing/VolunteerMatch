@@ -1,3 +1,21 @@
+body {
+  background-color: blue;
+}
+
+.border {
+  border-style: solid;
+  border-width: 1px;
+  height: 28em;
+  width: 31.250em;
+  margin-left: 25px;
+  margin-right: 1px;
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
 #animals {
   margin-bottom: 5px;
   font-size: 500%;
@@ -19,6 +37,15 @@
 .item {
   align-items: center;
   max-width: none;
+}
+
+.carousel {
+  margin: 0 auto;
+  max-width: 75%;
+  background-color: #66c2ff;
+}
+#carousel-example-generic.carousel.slide {
+  background-color: #66c2ff;
 }
 
 .carousel img {

@@ -31,7 +31,7 @@ var jsonOportunities = function(newOpportunities) {
     }
     else
     {
-      alert("No results found. Try changing your search criteria.")
+      // alert("No results found. Try changing your search criteria.")
     };
   });
 };
@@ -52,7 +52,7 @@ function OrganizationGroup(){
   this.organizations = [];
 }
 
-//dropdown text function
+// dropdown text function
 // $("li").click(function() {
 //   alert("this is a list.");
 // });
@@ -64,28 +64,32 @@ $(document).ready(function() {
     var startRecord = 0;
     var sort = "geodist() asc";
     var recordsReturn = 100;
-    var location = "97006";
+    // var location = "97006";
+    var location = $("input#location").val();
     var distance = 15;
     var startDate = "NOW";
     var endDate = "&vol_enddate=" + "2016-07-29";
-    var keyword = "hunger homelessness OR Health & Wellness";
+    // var keyword = "hunger homelessness OR Health & Wellness";
+    var keyword = $("input#insert-text").val();
+    console.log(location);
 
     var newOpportunities = new Opportunities(recordsReturn, location, distance, startDate, endDate, keyword);
     jsonOportunities(newOpportunities);
     for (var i = 0; i < newOpportunities.items.length; i++) {
       newOpportunities.items[i];
       var newDistance = parseFloat(newOpportunities.items[i].Distance).toFixed(2);
-      $("#newOpportunities").append("<h4>" + newOpportunities.items[i].title + "</h4>" +
+      $("#newOpportunities").append("<div class='col-xs-12 col-sm-6 col-md-4 col-lg-3 border'>" +
+                                    "<h4>" + newOpportunities.items[i].title + "</h4>" +
                                     "<p>" +  newOpportunities.items[i].description + "</p>" +
                                     "<ul>" +
                                       "<li>"+newOpportunities.items[i].location_name +"</li>" +
                                       "<li>"+ newDistance +"</li>" +
-                                      "<li><a href='" + newOpportunities.items[i].detailUrl + "'>" + newOpportunities.items[i].detailUrl + "</a></li>" +
+                                      "<li><a href='" + newOpportunities.items[i].detailUrl + "'>" + "Click here for the link" + "</a></li>" +
                                       "<li>"+newOpportunities.items[i].startDate +"</li>" +
                                       "<li>"+newOpportunities.items[i].endDate +"</li>" +
                                       "<li>"+newOpportunities.items[i].volunteerHubOrganizationName +"</li>" +
-                                      "<li><a href='" + newOpportunities.items[i].volunteerHubOrganizationUrl + "'>" + newOpportunities.items[i].volunteerHubOrganizationUrl + "</a></li>" +
-                                    "<ul>");
+                                      "<li><a href='" + newOpportunities.items[i].volunteerHubOrganizationUrl + "'>" + "Click here for info about the organization" + "</a></li>" +
+                                    "<ul></div>");
     };
 
    });
