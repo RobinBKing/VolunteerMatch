@@ -4,17 +4,74 @@ function Opportunities(recordsReturnMax, location, distance, startDate, endDate,
   this.recordsReturn = 0;
   this.location = location;
   this.distance = distance;
+  // this.startDate = newStartDate(startDate, endDate);
+  // this.endDate = newEndDate(startDate, endDate);
   this.startDate = startDate;
   this.endDate = endDate;
-  if(this.endDate !== "") {
-    this.endDate = "&vol_enddate=" + this.endDate;
-  };
   this.keyword = keyword;
   this.totalOpportunities = 0;
   this.startRecord = 0;
   this.sort = "geodist() asc";
   this.items =[];
   this.jsonString = "http://api2.allforgood.org/api/volopps?start=" + this.startRecord + "&num=" + this.recordsReturn + "&key=epicodus&type=all&merge=3&output=json-hoc&vol_loc=" + location + "&vol_dist=" + this.distance +  "&vol_startdate=" + this.startDate +  this.endDate + "&output=json-hoc&sort=" + this.sort + "&q=" + this.keyword + " ";
+};
+var convertedStartdate = function(startDate, endDate){
+  var newStartDate = new Date(startDate);
+  var newEndDate = new Date(endDate);
+  var newStartdateNumber = Date.parse(startDate);
+  var newEnddateNumber = Date.parse(endDate);
+  var currentDateNumber = Number(new Date());
+  var newStartYear = newStartDate.getFullYear();
+  var newStartMonth = newStartDate.getMonth();
+  var newStartDay = newStartDate.getDate();
+  var newEndYear = newEndDate.getFullYear();
+  var newEndMonth = newEndDate.getMonth();
+  var newEndDay = newEndDate.getDate();
+  var newCurrentYear = new Date().getFullYear();
+  var newCurrentMonth = new Date().getMonth();
+  var newCurrentDay = new Date().getDate();
+  if(newStartYear === newEndYear && newStartMonth === newEndMonth && newStartDay === newEndDay){
+    return startDate;
+  } else {
+    return startDate;
+  };
+  if(newStartYear === newEndYear && newStartMonth === newEndMonth && newEndDate - newStartDate <= 30){
+    return startDate;
+  } else {
+    return startDate;
+  };
+  // if(newStartYear === newEndYear && newStartMonth === newEndMonth){
+  //   if(newStartDay === newEndDay || (newEndDate - newStartDate <= 30)) {
+  //     return startDate;
+  //   };
+  //   if(newEndDay - newStartDay > 30) {
+  //     if(newEndYear === newCurrentYear && newEndMonth === newCurrentMonth) {
+  //       if(newEndDay - newCurrentDay > 30){
+  //         return "NOW";
+  //         // endDate = "";
+  //       };
+  //     };
+  //     if((newStartDay !== newEndDay) && (newEndDay - newCurrentDay <= 30)) {
+  //       return "NOW";
+  //       // endDate = "&vol_enddate=" + newEnddate;
+  //     };
+  //   };
+  // };
+};
+var convertedEnddate = function(startDate, endDate){
+  var newStartDate = startDate;
+  var newEndDate = endDate;
+  var newStartdateNumber = Date.parse(startDate);
+  var newEnddateNumber = Date.parse(endDate);
+  var currentDateNumber = Number(new Date());
+  // if(newStartdateNumber === newEnddateNumber) {
+  //   return "";
+  // };
+  if (endDate !== ""){
+    return "&vol_enddate=" + endDate;
+  } else {
+    return "";
+  }
 };
 var jsonOportunities = function(newOpportunities) {
   $.ajaxSetup({
@@ -24,12 +81,14 @@ var jsonOportunities = function(newOpportunities) {
   $.getJSON(newOpportunities.jsonString, function(jsonOpportunities) {
     newOpportunities.totalOpportunities = jsonOpportunities.TotalOpportunities;
     newOpportunities.recordsReturn = jsonOpportunities.num;
+    console.log(newOpportunities.jsonString);
     if (jsonOpportunities.num > 0) {
       for (var i = 0; i < jsonOpportunities.items.length; i++) {
          newOpportunities.items.push(jsonOpportunities.items[i]);
        };
     };
   });
+
   $.ajaxSetup({
   async: true
   });
@@ -58,50 +117,35 @@ var newDistanceNumber = function(newDistance){
   };
   return newDistanceNumber;
 };
+
 //interface
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
     //defaults
-    var startRecord = 0;
-    var sort = "geodist() asc";
-    var recordsReturn = 100;
+    var recordsReturnMax = 100;
     //end defaults
+    var newSerchCriteria = "";
+    var newKeyword = $("input#insert-text").val();
+    if(newKeyword !== ""){
+      newSerchCriteria += newKeyword
+    };
+    var newCatagories = $("select#categories").val();
+    if(newCatagories !== ""){
+      newSerchCriteria += newCatagories
+    };
     var newLocation = $("input#location").val();
     var newDistance = newDistanceNumber($("select#distance").val());
     var newStartdate = $("input#start-date").val();
-    var newEnddate = $("input#end--date").val();
-    //If opportunity is Start Date = End Date , then display: [Start date] 	ex: June 1
-// If opportunity is End Date - Start Date <= 30  && Start Date <> End Date , then display: [Start date] - [End Date]	ex: June 1 - June 30
-// If opportunity is End Date - Start Date > 30 && End Date - Current Date > 30, then display: Ongoing
-
-// If opportunity is End Date - Start Date > 30  && Start Date <> End Date && End Date - Current Date <= 30 then display: Now until [End Date]  ex: Now until June 15
-    var startDate = "";
-    vare endDate = "";
-    // var endDate = "&vol_enddate=" + "2016-07-29";
-    if(newStartdate === newEnddate) {
-      startDate = newStartdate;
-    };
-    if((newEnddate - newStartdate <= 30) && (newStartdate != newEnddate)) {
-      startDate = newStartdate;
-      endDate = "&vol_enddate=" + newEnddate;
-    };
-    if((newEnddate - newStartdate > 30) &&  (newEnddate - currentDate > 30) {
-      startDate =  "NOW";
-      endDate = "";
-    };
-    if((newEnddate - newStartdate > 30) &&  (newStartdate != newEnddate) && (newEnddate - currentDate <= 30) {
-      startDate =  "NOW";
-      endDate = "&vol_enddate=" + newEnddate;
-    };
+    var newEnddate = $("input#end-date").val();
+    var startDate = convertedStartdate(newStartdate, newEnddate);
+    var endDate = convertedEnddate(newStartdate, newEnddate);
 
     // var keyword = "hunger homelessness OR Health & Wellness";
-    var keyword = $("input#insert-text").val();
-    console.log(location);
-
-    var newOpportunities = new Opportunities(recordsReturn, location, distance, startDate, endDate, keyword);
+    var newOpportunities = new Opportunities(recordsReturnMax, newLocation, newDistance, startDate, endDate, newSerchCriteria);
     jsonOportunities(newOpportunities);
-    if(newOpportunities.recordsReturn > o){
+
+    if(newOpportunities.recordsReturn > 0){
       for (var i = 0; i < newOpportunities.items.length; i++) {
         newOpportunities.items[i];
         var newDistance = parseFloat(newOpportunities.items[i].Distance).toFixed(2);
