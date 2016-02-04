@@ -56,19 +56,56 @@
     <div>
       <h3 id="bottom-header">Type in a search keyword below or click on one of the categories to display helpful keywords</h3>
     </div>
-    <section class="main">
-      <form class="search" method="post" action="index.html">
-        <input type="text" id="insert-text" name="q" placeholder="Search keyword" />
-          <ul class="results">
-           <li id="elderly">Elderly</li>
-           <li><a href="index.html">Homeless<br /><span>Help the homeless</span></a></li>
-           <li><a href="index.html">Kids<br /><span>Help kids</span></a></li>
-           <li><a href="index.html">Autism<br /><span>Help people affected by autism</span></a></li>
-          </ul>
-          <input type="text" id="location" placeholder="Zip or City, State" />
+    <div class="row">
+      <div class="col-sm-3">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" id="insert-text" placeholder="Search keyword" />
+          </div>
+          <div class="form-group">
+            <select class="form-control" id="categories">
+              <option>Adult Education</option>
+              <option>Animals</option>
+              <option>Arts and Culture</option>
+              <option>Children and Youth Education</option>
+              <option>Civic and Community</option>
+              <option>Disaster and Emergency Services</option>
+              <option>Environment</option>
+              <option>Faith-Based Service</option>
+              <option>Family Services</option>
+              <option>Health and Wellness</option>
+              <option>Hunger and Homelessness</option>
+              <option>Immigrant and Refugee Services</option>
+              <option>International Service</option>
+              <option>Internships and Employment</option>
+              <option>Justice and Legal Services</option>
+              <option>Schools</option>
+              <option>Senior Services</option>
+              <option>Sports and Recreation</option>
+              <option>Technology</option>
+              <option>Veterans and Military Families</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <input type="text" class="form-control" id="location" placeholder="Zip or City, State" />
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <input type="date" class="form-control" id="start-date" />
+          </div>
+          <div class="form-group">
+            <input type="date" class="form-control" id="end-date" />
+          </div>
+        </div>
+        <div class="col-sm-3">
           <button type="submit" class="btn btn-primary">Search</button>
+        </div>
        </form>
-     </section>
+     </div>
+   </div>
      <div class="row">
          <div id="newOpportunities">
          </div>
