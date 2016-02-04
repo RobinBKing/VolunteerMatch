@@ -1,7 +1,7 @@
 //business logic
 function Opportunities(recordsReturnMax, location, distance, startDate, endDate, keyword){
   this.recordsReturnMax = recordsReturnMax;
-  this.recordsReturn = 0;
+  this.recordsReturn = 100;
   this.location = location;
   this.distance = distance;
   // this.startDate = newStartDate(startDate, endDate);
@@ -13,7 +13,7 @@ function Opportunities(recordsReturnMax, location, distance, startDate, endDate,
   this.startRecord = 0;
   this.sort = "geodist() asc";
   this.items =[];
-  this.jsonString = "http://api2.allforgood.org/api/volopps?start=" + this.startRecord + "&num=" + this.recordsReturn + "&key=epicodus&type=all&merge=3&output=json-hoc&vol_loc=" + location + "&vol_dist=" + this.distance +  "&vol_startdate=" + this.startDate +  this.endDate + "&output=json-hoc&sort=" + this.sort + "&q=" + this.keyword + " ";
+  this.jsonString = "http://api2.allforgood.org/api/volopps?&key=epicodus&num=" + this.recordsReturn + "&type=all&merge=3&output=json-hoc&vol_loc=" + this.location + "&vol_dist=" + this.distance +  "&vol_startdate=" + this.startDate +  this.endDate + "&output=json-hoc&sort=" + this.sort + "&q=" + this.keyword + " ";
 };
 var convertedStartdate = function(startDate, endDate){
   var newStartDate = new Date(startDate);
@@ -30,48 +30,31 @@ var convertedStartdate = function(startDate, endDate){
   var newCurrentYear = new Date().getFullYear();
   var newCurrentMonth = new Date().getMonth();
   var newCurrentDay = new Date().getDate();
-  if(newStartYear === newEndYear && newStartMonth === newEndMonth && newStartDay === newEndDay){
-    return startDate;
-  } else {
-    return startDate;
-  };
-  if(newStartYear === newEndYear && newStartMonth === newEndMonth && newEndDate - newStartDate <= 30){
-    return startDate;
-  } else {
-    return startDate;
-  };
-  // if(newStartYear === newEndYear && newStartMonth === newEndMonth){
-  //   if(newStartDay === newEndDay || (newEndDate - newStartDate <= 30)) {
-  //     return startDate;
-  //   };
-  //   if(newEndDay - newStartDay > 30) {
-  //     if(newEndYear === newCurrentYear && newEndMonth === newCurrentMonth) {
-  //       if(newEndDay - newCurrentDay > 30){
-  //         return "NOW";
-  //         // endDate = "";
-  //       };
-  //     };
-  //     if((newStartDay !== newEndDay) && (newEndDay - newCurrentDay <= 30)) {
-  //       return "NOW";
-  //       // endDate = "&vol_enddate=" + newEnddate;
-  //     };
-  //   };
+  // if(newStartYear === newEndYear && newStartMonth === newEndMonth && newStartDay === newEndDay){
+  //   return startDate;
+  // } else {
+  //   return startDate;
   // };
+  // if(newStartYear === newEndYear && newStartMonth === newEndMonth && newEndDate - newStartDate <= 30){
+  //   return startDate;
+  // } else {
+  //   return startDate;
+  // };
+  if(startDate === ""){
+    startDate = "NOW"
+  };
+  return startDate;
 };
 var convertedEnddate = function(startDate, endDate){
-  var newStartDate = startDate;
-  var newEndDate = endDate;
+  var newStartDate = new Date(startDate);
+  var newEndDate = new Date(endDate);
   var newStartdateNumber = Date.parse(startDate);
   var newEnddateNumber = Date.parse(endDate);
   var currentDateNumber = Number(new Date());
-  // if(newStartdateNumber === newEnddateNumber) {
-  //   return "";
-  // };
   if (endDate !== ""){
-    return "&vol_enddate=" + endDate;
-  } else {
-    return "";
-  }
+    endDate = "&vol_enddate=" + endDate;
+  };
+  return endDate;
 };
 var jsonOportunities = function(newOpportunities) {
   $.ajaxSetup({

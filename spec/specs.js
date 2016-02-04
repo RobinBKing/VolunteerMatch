@@ -1,9 +1,9 @@
 describe('Opportunities', function () {
   it("creates a new object Opportunities with given properties", function() {
-    var testOpportunities = new Opportunities(1, "Portland, OR", 15, "2016-02-05", "2016-02-30", "hunger homelessness OR Health & Wellness");
+    var testOpportunities = new Opportunities(100, "Portland, OR", 15, "2016-02-05", "2016-02-30", "hunger homelessness OR Health & Wellness");
     jsonOportunities(testOpportunities);
-    expect(testOpportunities.recordsReturn).to.equal(1);
-    expect(testOpportunities.items.length).to.equal(1);
+    expect(testOpportunities.recordsReturn).to.equal(100);
+    expect(testOpportunities.items.length).to.equal(100);
   });
 });
 describe('Distance', function () {
