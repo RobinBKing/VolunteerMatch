@@ -1,5 +1,5 @@
 body {
-    background: #f7f7f7;
+    background: white;
     color: #404040;
     font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 13px;
@@ -46,7 +46,7 @@ ul {
 
 .carousel {
   margin: 0 auto;
-  max-width: 75%;
+  max-width: 100%;
   background-color: #66c2ff;
 }
 #carousel-example-generic.carousel.slide {
@@ -69,6 +69,13 @@ h3 {
 
  .form-control  {
    margin-bottom: -10px;
+   width: 100%;
+
+ }
+
+ #center-inputs{
+  width: 100%;
+  margin-left: 8%;
  }
 
 #distance {
@@ -111,10 +118,6 @@ h3 {
   text-align: center;
   padding-top: 10px;
   font-family: Georgia serif;
-}
-
-.form-control {
-  width: 60%;
 }
 
 /*-----------
@@ -242,8 +245,12 @@ MEDIA QUERIES
 /*media querie for header in index. "volunteer connection. get involved"*/
 @media only screen and (max-width: 500px) {
   #header-title {
-
     font-size: 20px;
+  }
+}
+@media only screen and (max-width: 770px) {
+  #center-inputs {
+    width: 80%;
   }
 }
 /*End of Media querie*/

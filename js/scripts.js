@@ -105,6 +105,7 @@ var newDistanceNumber = function(newDistance){
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
+    $("#newOpportunities").empty();
     //defaults
     var recordsReturnMax = 100;
     //end defaults
