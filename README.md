@@ -1,11 +1,11 @@
-# Project Template
+# Volunteer Connection
 
-#### a program that matches users to a volunteer organization.
+#### A program that matches users to a volunteer organization.
 
-### By Rob King, Pablo Vera, Jacob Steinberg, Ryan Brown
+### By Rob King, Pablo Vera, Jacob Steinberg, Ryan Brown.
 
 ## Description
-This application is a final project for Intro to Programming. The site will dispaly a list of volunteer orgainizations based on user input, using a volunteerMatch API and a Google Maps API.
+This application is a final project for Intro to Programming. The site will display a list of volunteer organizations based on user input, using a volunteerMatch API and a Google Maps API.
 
 ## setup
 The application can be installed by cloning the project from GitHub.
@@ -14,5 +14,5 @@ The application can be installed by cloning the project from GitHub.
 Application: JavaScript, jQuery, HTML5, CSS3
 Testing: Mocha, Chai
 
-###Leagal:
+###Legal:
 Copyright (c) 2016 **Robin B. King Pablo Vera, Jacob Steinberg, Ryan Brown**
