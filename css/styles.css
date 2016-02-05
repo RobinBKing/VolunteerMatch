@@ -14,7 +14,7 @@ body {
   margin-right: 1px;
   margin-bottom: 5px;
   display: inline-block;
-  background-color: #b3b3b3;
+  background-color: #66c2ff;
   color: #fff;
   font-weight: bold;
   padding: 10px;
@@ -95,20 +95,6 @@ h3 {
    margin-top: -40px;
    margin-bottom: -20px;
  }
-
- #second-header {
-   background-color: #66c2ff;
-   margin-top: -20px;
-   font-weight: bolder;
-   height: 100px;
-}
-
- /*Control home link on second page*/
-.home-link {
-  float: left;
-  margin-left: 20px;
-  font-weight: bold;
-}
 /*Control padding of Volunteer Connection tittle*/
 #header-title {
   padding-top: 30px;
