@@ -22,9 +22,9 @@ var checkDates = function(startDate, endDate){
   if(endDate !== ""){
     newEndDate = new Date(endDate);
   };
-  var newStartdateNumber = newStartDate.getFullYear() + newStartDate.getMonth() + newStartDate.getDate();
-  var newEnddateNumber = newEndDate.getFullYear() + newEndDate.getMonth() + newEndDate.getDate();
-  return newEnddateNumber >= newStartdateNumber;
+  var newStartdateNumber = newStartDate.getFullYear() & newStartDate.getMonth() & newStartDate.getDate();
+  var newEnddateNumber = newEndDate.getFullYear() & newEndDate.getMonth() & newEndDate.getDate();
+  return newEnddateNumber > newStartdateNumber;
 };
 var jsonOportunities = function(newOpportunities) {
   $.ajaxSetup({
@@ -74,22 +74,22 @@ var newDistanceNumber = function(newDistance){
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-    var newRecordsReturnMax = 100;
     $("#newOpportunities").empty();
+    var newRecordsReturnMax = 100;
     var newSerchCriteria = "";
     var newKeyword = $("input#insert-text").val();
     if(newKeyword !== ""){
       newSerchCriteria += newKeyword
     };
-    var newCatagories = $("select#categories").val();
-    if(newCatagories !== ""){
-      newSerchCriteria += newCatagories
+    var newCategories = $("select#categories").val();
+    if(newCategories !== "" && newCategories !== "Categories" ){
+      newSerchCriteria += " " + newCategories
     };
     var newLocation = $("input#location").val();
     var newDistance = newDistanceNumber($("select#distance").val());
     var newStartdate = $("input#start-date").val();
     var newEnddate = $("input#end-date").val();
-    if(checkDates(newStartdate, newEnddate)){
+    if(!checkDates(newStartdate, newEnddate)){
       if(newStartdate === ""){
         newStartdate = "NOW"
       };
@@ -98,6 +98,8 @@ $(document).ready(function() {
       };
       var newOpportunities = new Opportunities(newRecordsReturnMax, newLocation, newDistance, newEnddate, newEnddate, newSerchCriteria);
       jsonOportunities(newOpportunities);
+
+        $('form#opportunities').trigger("reset");
 
       if(newOpportunities.recordsReturn > 0){
         for (var i = 0; i < newOpportunities.items.length; i++) {
@@ -116,7 +118,6 @@ $(document).ready(function() {
                                           "<li><a href='" + newOpportunities.items[i].volunteerHubOrganizationUrl + "'>" + "Click here for info about the organization" + "</a></li>" +
                                         "<ul></div>");
         };
-
       }
       else {
         alert("No results found. Try changing your search criteria.")

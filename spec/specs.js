@@ -16,6 +16,6 @@ describe('Distance', function () {
 describe('Date check', function () {
   it("return true if endDate is > startdate", function() {
     var testDate = checkDates("2016-02-05", "2016-02-05");
-    expect(testDate).to.equal(true);
+    expect(testDate).to.equal(false);
   });
 });
