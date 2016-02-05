@@ -125,6 +125,11 @@ $(document).ready(function() {
     var startDate = convertedStartdate(newStartdate, newEnddate);
     var endDate = convertedEnddate(newStartdate, newEnddate);
 
+    $("input#insert-text").val('');
+    $("select#categories").val('');
+    $("input#location").val('');
+    $('select#distance').val( $('select#distance').prop('defaultSelected') );
+
     // var keyword = "hunger homelessness OR Health & Wellness";
     var newOpportunities = new Opportunities(recordsReturnMax, newLocation, newDistance, startDate, endDate, newSerchCriteria);
     jsonOportunities(newOpportunities);
@@ -135,7 +140,7 @@ $(document).ready(function() {
         var newDistance = parseFloat(newOpportunities.items[i].Distance).toFixed(2);
         $("#newOpportunities").append("<div class='col-xs-12 col-sm-6 col-md-4 col-lg-3 border'>" +
                                       "<h4>" + newOpportunities.items[i].title + "</h4>" +
-                                      "<p>" +  newOpportunities.items[i].description + "</p>" +
+                                      "<p>" +  newOpportunities.items[i].description + "...</p>" +
                                       "<ul>" +
                                         "<li>"+newOpportunities.items[i].location_name +"</li>" +
                                         "<li>"+ newDistance +"</li>" +

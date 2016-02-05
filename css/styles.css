@@ -1,20 +1,25 @@
 body {
-    background: white;
-    color: #404040;
-    font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    font-weight: normal;
-    line-height: 20px;
+  background: white;
+  color: #404040;
+  font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 20px;
 }
 
 .border {
-  border-style: solid;
-  border-width: 1px;
   height: 28em;
-  width: 31.250em;
-  margin-left: 25px;
+  width: 28em;
+  margin-left: 95px;
   margin-right: 1px;
+  margin-bottom: 5px;
   display: inline-block;
+  background-color: #b3b3b3;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 ul {
@@ -76,6 +81,7 @@ h3 {
  #center-inputs{
   width: 100%;
   margin-left: 8%;
+  margin-bottom: 10px;
  }
 
 #distance {
