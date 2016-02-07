@@ -75,9 +75,12 @@ h3 {
  .form-control  {
    margin-bottom: -10px;
    width: 100%;
-
  }
 
+ .form-control#start-date, #end-date {
+   width: 75%;
+}
+ 
  #center-inputs{
   width: 100%;
   margin-left: 8%;
@@ -111,7 +114,10 @@ h3 {
   padding-top: 10px;
   font-family: Georgia serif;
 }
-
+.btn {
+    width: 100px;
+    margin-bottom: 5px;
+}
 /*-----------
 MEDIA QUERIES
 ------------*/
