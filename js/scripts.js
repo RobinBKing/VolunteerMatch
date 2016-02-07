@@ -43,7 +43,6 @@ var jsonOportunities = function(newOpportunities) {
 
   $.getJSON(newOpportunities.jsonString, function(jsonOpportunities) {
     newOpportunities.totalOpportunities = jsonOpportunities.TotalOpportunities;
-    console.log(jsonOpportunities);
     newOpportunities.recordsReturn = jsonOpportunities.num;
     if (jsonOpportunities.num > 0) {
       for (var i = 0; i < jsonOpportunities.items.length; i++) {
@@ -84,6 +83,8 @@ var newDistanceNumber = function(newDistance){
 $(document).ready(function() {
   $('#newSearch').on('click', function (e) {
     $("#newOpportunities").empty();
+    $("#totalOpportunities").text("");
+    $("#recordsReturned").text("");
   });
   $("form").submit(function (event) {
     event.preventDefault();
@@ -110,11 +111,12 @@ $(document).ready(function() {
         newEnddate = "&vol_enddate=" + newEnddate;
       };
       var newOpportunities = new Opportunities(newRecordsReturnMax, newLocation, newDistance, newEnddate, newEnddate, newSerchCriteria);
+      //json call
       jsonOportunities(newOpportunities);
 
-      //$('form#opportunities').trigger("reset");
-
-      if(newOpportunities.recordsReturn > 0){
+      if (newOpportunities.recordsReturn > 0) {
+        $("#totalOpportunities").text("Total Opportunities: " + newOpportunities.totalOpportunities);
+        $("#recordsReturned").text("Records returned: " + newOpportunities.recordsReturn);
         for (var i = 0; i < newOpportunities.items.length; i++) {
           newOpportunities.items[i];
           var newDistance = parseFloat(newOpportunities.items[i].Distance).toFixed(2);
@@ -128,7 +130,7 @@ $(document).ready(function() {
                                             "<li>"+newOpportunities.items[i].startDate +"</li>" +
                                             "<li>"+newOpportunities.items[i].endDate +"</li>" +
                                             "<li>"+newOpportunities.items[i].volunteerHubOrganizationName +"</li>" +
-                                            "<li><a href='" + newOpportunities.items[i].volunteerHubOrganizationUrl + "'>" + "Click here for info about the organization" + "</a></li>" +
+                                            "<li><a href='http://www.allforgood.org/newOpportunities.items[i].volunteerHubOrganizationUrl'>" + "Click here for info about the organization" + "</a></li>" +
                                           "<ul>" +
                                         "</div>");
         };
