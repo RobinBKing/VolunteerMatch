@@ -5,7 +5,7 @@
 ### By Rob King, Pablo Vera, Jacob Steinberg, Ryan Brown.
 
 ## Description
-This application is a final project for Intro to Programming. The site will display a list of volunteer organizations based on user input, using a volunteerMatch API and a Google Maps API.
+This application is a final project for Intro to Programming. The site will display a list of volunteer organizations based on user input, using an API from the All For Good organization.
 
 ## Setup
 The application can be installed by cloning the project from GitHub. Or it can be viewed at this url: http://robinbking.github.io/VolunteerMatch/
